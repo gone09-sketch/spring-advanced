@@ -1,5 +1,6 @@
 package org.example.expert.config;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -20,7 +21,7 @@ class PasswordEncoderTest {
         String encodedPassword = passwordEncoder.encode(rawPassword);
 
         // when
-        boolean matches = passwordEncoder.matches(encodedPassword, rawPassword);
+        boolean matches = passwordEncoder.matches(rawPassword,encodedPassword);
 
         // then
         assertTrue(matches);
